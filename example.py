@@ -1,21 +1,21 @@
 import os
 import pyxdf
 import mne
-from xdf2mne.xdf2mne import streams2raw
+from xdf2mne import streams2raw
 
 import logging
 logger = logging.getLogger(__name__)
 
-filename = 'your_own.xdf'
-filepath = os.path.join('/', filename)
+filename = "2023-06-03_finger_discrimination_pilot_jan\Task_1_16.xdf"
+filepath = os.path.join("data", filename)
 
 streams, fileheader = pyxdf.load_xdf(filepath, dejitter_timestamps=True)
 
-##%
-stream = streams[0]
+##
+stream = streams[3]
 marker_stream = streams[1]
 
-raw, events, event_id = streams2raw(stream, marker_stream=[marker_stream])
+raw, events, event_id = streams2raw(stream, marker_streams=[marker_stream])
 
 print(f"raw contains the following annotations: {raw.annotations}")
 # The events array is redundant with annotations, you can do
