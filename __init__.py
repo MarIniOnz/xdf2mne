@@ -1,1 +1,1 @@
-__all__ = ['xdf2mne']
+__all__ = ["xdf2mne"]

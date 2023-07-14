@@ -4,6 +4,7 @@ import mne
 from xdf2mne import streams2raw
 
 import logging
+
 logger = logging.getLogger(__name__)
 
 filename = "2023-06-03_finger_discrimination_pilot_jan\Task_1_16.xdf"
